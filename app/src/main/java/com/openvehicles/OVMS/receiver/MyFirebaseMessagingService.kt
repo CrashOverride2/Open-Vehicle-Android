@@ -147,6 +147,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                 car.sel_vehicle_image.startsWith("car_kianiro_") -> R.drawable.map_car_kianiro_grey // one map icon for all colors
                 car.sel_vehicle_image.startsWith("car_kangoo_") -> R.drawable.map_car_kangoo // one map icon for all colors
                 car.sel_vehicle_image.startsWith("car_nrjk") -> R.drawable.map_car_nrjk // one map icon for all colors and models
+                car.sel_vehicle_image.startsWith("car_niugtevo") -> R.drawable.map_car_niugtevo // one map icon for all colors and models
                 else -> Ui.getDrawableIdentifier(this, "map_" + car.sel_vehicle_image)
             }*/
 

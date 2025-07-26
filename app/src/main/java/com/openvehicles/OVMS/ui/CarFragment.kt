@@ -104,7 +104,7 @@ class CarFragment : BaseFragment(), View.OnClickListener, OnResultCommandListene
                 // change "Homelink" image:
                 tabCarImageHomeLink.setImageResource(R.drawable.ic_home_link)
             }
-            "EN", "NRJK" -> { // Also previous "NRJK" code
+            "EN", "NRJK", "NIUGTEVO" -> { // Also previous "NRJK" code
                 // UI change for Energica:
 
                 // TODO: No TPMS, only two wheels, etc.
@@ -630,6 +630,8 @@ class CarFragment : BaseFragment(), View.OnClickListener, OnResultCommandListene
             iv.setImageResource(R.drawable.ol_car_nrjkexperia)
         } else if (carData.sel_vehicle_image.startsWith("car_nrjk")) {
             iv.setImageResource(R.drawable.ol_car_nrjkexperia) // TODO: Ribelle top view
+        } else if (carData.sel_vehicle_image.startsWith("car_niugtevo")) {
+            iv.setImageResource(R.drawable.ol_car_niugtevo)
         } else {
             iv.setImageResource(getDrawableIdentifier(activity, "ol_" + carData.sel_vehicle_image))
         }
@@ -1254,8 +1256,8 @@ class CarFragment : BaseFragment(), View.OnClickListener, OnResultCommandListene
                     )
                     else -> iv.setImageResource(R.drawable.ol_car_voltampera_chargeport_red)
                 }
-            } else if (carData.sel_vehicle_image.startsWith("car_nrjk")) {
-                // TODO
+            } else if (carData.sel_vehicle_image.startsWith("car_niugtevo_")) {
+                iv.setImageResource(R.drawable.ol_car_niugtevo_charging)
             } else {
                 // Tesla Roadster:
                 if (carData.car_charge_substate_i_raw == 0x07) {

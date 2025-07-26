@@ -24,7 +24,8 @@ object CarRenderingUtils {
             || carData.sel_vehicle_image.startsWith("car_ampera_")
             || carData.sel_vehicle_image.startsWith("car_twizy_")
             || carData.sel_vehicle_image.startsWith("car_kangoo_")
-            || carData.sel_vehicle_image.startsWith("car_nrjk")) {
+            || carData.sel_vehicle_image.startsWith("car_nrjk")
+            || carData.sel_vehicle_image.startsWith("car_niugtevo")) {
             // Mitsubishi i-MiEV: one ol image for all colors:
             overlayResource = name_splitted.minus(name_splitted.last())
                 .joinToString("_")
@@ -216,6 +217,8 @@ object CarRenderingUtils {
                         "done" -> layers = layers.plus(ContextCompat.getDrawable(context, R.drawable.ol_car_voltampera_chargeport_green)!!)
                         else -> layers = layers.plus(ContextCompat.getDrawable(context, R.drawable.ol_car_voltampera_chargeport_red)!!)
                     }
+                } else if (carData.sel_vehicle_image.startsWith("car_niugtevo_")) {
+                    layers = layers.plus(ContextCompat.getDrawable(context, R.drawable.ol_car_niugtevo_charging)!!)
                 } else {
                     // Tesla Roadster:
                     if (carData.car_charge_substate_i_raw == 0x07) {
